@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            color: #ff9800;
+        }
+
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        section {
+            height: 600px;
+            padding: 20px;
+        }
+
+        #home {
+            background-color: #f1f1f1;
+        }
+
+        #about {
+            background-color: #e2e2e2;
+        }
+
+        #services {
+            background-color: #d3d3d3;
+        }
+
+        #contact {
+            background-color: #c4c4c4;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+        <section id="home">Home Section</section>
+        <section id="about">About Section</section>
+        <section id="services">Services Section</section>
+        <section id="contact">Contact Section</section>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = '#222';
+            } else {
+                navbar.style.backgroundColor = '#333';
+            }
+        });
+    </script>
+</body>
+</html>
